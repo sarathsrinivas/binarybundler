@@ -26,7 +26,7 @@ Just clone and run.
 ```
 > git clone https://gitlab.com/srinix/binarybundler.git
 > chmod +x binarybundler/bundle.sh
-> ./binarybundler/bundle.sh <binary_file1> <binary_file2> 
+> ./binarybundler/bundle.sh <binary_file1> <binary_file2> ... 
 ```
 
 ## Usage
@@ -35,10 +35,10 @@ Let's say you have a host system where you compile
 your codes and the compilation is successful
 resulting in a binary executable `a.out`.
 
-Then you can create bundle that contains all
+Then you can create bundle that contains all the
 shared object dependencies of `a.out` which
-can be moved to another linux system with same
-architecture.
+can be moved to another linux system with the same
+architecture (mostly x86_64).
 
 ```
 > ./bundle.sh ./a.out 
@@ -55,7 +55,7 @@ and `a.out` can be run using the shell script
 `run.sh` provided in the bundle.
 
 ```
-> scp -r bundle_jgg345juio user@cluster:~
+> scp -r bundle_jgg345juio user@cluster:~/
 > ssh user@cluster
 cluster> cd bundle_jgg345juio 
 cluster> ./run.sh a.out
