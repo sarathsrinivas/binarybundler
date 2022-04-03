@@ -65,7 +65,7 @@ do
 if [ -f "$fl" ] && [ -x "$fl" ]
 then
 echo "Patching binary $fl to" '$ORIGIN/lib'
-patchelf --add-rpath '$ORIGIN/lib' "$fl"
+patchelf --set-rpath '$ORIGIN/lib' "$fl"
 fi
 done
 
@@ -75,7 +75,7 @@ do
 if [ -f "$fl" ] && [ -x "$fl" ] 
 then
 echo "Patching library $fl to" '$ORIGIN'
-patchelf --add-rpath '$ORIGIN' "$fl"
+patchelf --set-rpath '$ORIGIN' "$fl"
 fi
 done
 
